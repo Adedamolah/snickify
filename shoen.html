@@ -1,0 +1,193 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneakify</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000; /* Black theme */
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Sleek Abstract Background with Gradients */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at top left, #0ff3, transparent 50%),
+                  radial-gradient(circle at bottom right, #a0f3, transparent 50%);
+      animation: moveBg 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveBg {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(50px, 50px) rotate(360deg); }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(45deg, cyan, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 0 10%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text {
+      flex: 1;
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 72px;
+      font-weight: bold;
+      background: linear-gradient(90deg, cyan, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .hero-text button {
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(90deg, cyan, violet);
+      color: #000;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-text button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px cyan;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .shoe-img {
+      width: 450px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 25px cyan);
+      transition: transform 0.5s;
+    }
+
+    .shoe-img:hover {
+      transform: rotateY(20deg) scale(1.05);
+      filter: drop-shadow(0 0 40px violet);
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Sneakify</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Catalog</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Own the Night</h1>
+      <p>Glow in style with sneakers designed for bold moves and endless comfort.</p>
+      <button>Shop Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="neon.WEBP" alt="Sneaker" class="shoe-img">
+    </div>
+  </section>
+
+</body>
+</html>
